@@ -6,12 +6,6 @@ metadata:
   annotations:
     ingress.kubernetes.io/ssl-redirect: "false"
 spec:
-  ttolerations:
-  - key: "key" 
-    operator: "Equal" 
-    value: "value" 
-    effect: "NoExecute" 
-    tolerationSeconds: 3600 
   rules:
   - http:
       paths:
