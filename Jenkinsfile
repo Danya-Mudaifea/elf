@@ -46,6 +46,7 @@ stages {
               container('kubectl') {
                   sh '''
                        kubectl --token=$TOKEN create namespace elf
+		       kubectl create -n labs clusterrolebinding jenkins --clusterrole cluster-admin --serviceaccount=jenkins:default 
                   '''
               }
           }
