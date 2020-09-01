@@ -30,7 +30,7 @@ stages {
           steps {
               container('kubectl') {
                   sh '''
-                       kubectl --token=$TOKEN create namespace elf
+                       kubectl --token=$TOKEN create namespace elf_delta
                   '''
               }
           }
@@ -44,9 +44,9 @@ stages {
                      helm repo add elastic https://helm.elastic.co
                      helm repo add fluent https://fluent.github.io/helm-charts
                      helm repo update
-                     helm install elasticsearch elastic/elasticsearch --version=7.9.0 --namespace=elf
-                     helm install fluent-bit fluent/fluent-bit --namespace=elf
-                     helm install kibana elastic/kibana --version=7.9.0 --namespace=elf --set service.type=NodePort
+                     helm install elasticsearch elastic/elasticsearch --version=7.9.0 --namespace=elf_delta
+                     helm install fluent-bit fluent/fluent-bit --namespace=elf_delta
+                     helm install kibana elastic/kibana --version=7.9.0 --namespace=elf_delta --set service.type=NodePort
                    '''
                           
           }
