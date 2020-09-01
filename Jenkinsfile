@@ -26,6 +26,21 @@ environment {
   }
 
 stages { 
+  stage('delete') {
+          steps {
+              container('kubectl') {
+                  sh '''
+                     helm uninstall elasticsearch --namespace=elf
+	                   helm uninstall fluent-bit --namespace=elf
+	                   helm uninstall kibana --namespace=elf
+                     kubectl delete random-logger -n elf
+                  '''
+              }
+          }
+      }
+  
+  
+  
     stage('deploy:kubectl') {
           steps {
               container('kubectl') {
