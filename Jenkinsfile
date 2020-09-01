@@ -22,7 +22,7 @@ spec:
   }   
 
 environment {
-    TOKEN=credentials('6fff3a41-3383-41f4-9e32-5945ad8f348b')
+    TOKEN=credentials('0f0f51c2-b05b-4f03-9039-4cf469d29d93')
   }
 
 stages { 
